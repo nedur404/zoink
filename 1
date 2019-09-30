@@ -1,0 +1,44 @@
+class Item(object):
+    def __init__(self, name, attack, armor, weight, price):
+        self.name = name
+        self.attack = attack
+        self.armor = armor
+        self.weight = weight
+        self.price = price
+
+
+class Inventory(object):
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item):
+        self.items[item.name] = item
+
+    def print_items(self):
+        print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
+        for item in self.items.values():
+            print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+
+answer = input("Would you like to play? (yes/no)")
+
+if answer.lower().strip() == "yes":
+
+    answer = input("You wake up in a grassy field. Where would you like to go?").lower().strip()
+    if answer == "north":
+        answer = input("You see a barn in the distance.")
+        if answer == "north":
+            answer = input("You reach two tall barn doors")
+    if answer == "south":
+        answer = input("You reach a forest.")
+    if answer == "east":
+        answer = input("Grassy field cont.")
+    if answer == "west":
+        answer = input("Grassy field con.t")
+if answer.lower().strip() == "no":
+    print("That's too bad.")
+    #sys.exit
+else:
+    print("I don't know that word.")
+
+
+
