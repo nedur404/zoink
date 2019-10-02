@@ -42,7 +42,7 @@ if answer.lower().strip() == "yes" or "y":
         answer = input("You see a barn in the distance.")
         if answer == "north":
             answer = input("You reach two tall barn doors.")
-            if answer == "open":
+            if answer == "open" or answer == "open doors":
                 answer = input("The doors are locked.")
     if answer == "south":
         answer = input("You see a forest in the distance.")
@@ -51,7 +51,13 @@ if answer.lower().strip() == "yes" or "y":
             if answer == "south":
                 answer = input("Forest")
     if answer == "east":
-        answer = input("Grassy field cont.")
+        answer = input("You see a still pool of water in the distance")
+        if answer == "east":
+            print("You reach the pool of water")
+            time.sleep(1)
+            print("As you look into it you see your reflection.")
+            time.sleep(2)
+            print("You are bloodied and bruised, with a mysterious green ooze covering you.")
     if answer == "west":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
         if answer == "west":
@@ -74,7 +80,7 @@ if answer.lower().strip() == "yes" or "y":
                                 time.sleep(2)
                                 print("It's eyes roll back in his head as it reaches out and bites your hand viciously!")
                                 time.sleep(3)
-                                print("You Died!")
+                                answer = input("You Died!")
                               #  playAgain = "Yes"
                               #  while playAgain == 'Yes' or playAgain == "Y" or playAgain == "y" or playAgain == "yes":
                               #      playAgain = input("Do you want to play again? Yes or Y to continue playing?")
@@ -86,8 +92,9 @@ if answer.lower().strip() == "yes" or "y":
 if answer.lower().strip() == "no":
     print("That's too bad.")
     #sys.exit
-else:
-    print("You can't do that here.")
+#else:
+    #print("You can't do that here.")
+
 
 
 
