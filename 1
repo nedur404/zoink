@@ -21,13 +21,23 @@ class Inventory(object):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
         for item in self.items.values():
             print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+
+
+def choosepath():
+    path = ""
+    while path != "1" and path != "2":
+        path = input("Which horse would you like to pet, 1 or 2?")
+    return path
 import random
 import time
 answer = input("Would you like to play? (yes/no)")
 
 if answer.lower().strip() == "yes" or "y":
+    def displayIntro():
+        print("You wake up in a grassy field with no memory of how you got there.")
     time.sleep(.15)
-    answer = input("You wake up in a grassy field. Where would you like to go? (cardinal directions)").lower().strip()
+    displayIntro()
+    answer = input("Where would you like to go? (cardinal directions)").lower().strip()
     if answer == "north":
         answer = input("You see a barn in the distance.")
         if answer == "north":
@@ -45,23 +55,12 @@ if answer.lower().strip() == "yes" or "y":
     if answer == "west":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
         if answer == "west":
-            answer = input("Grassy field cont.")
-            if answer == "west":
-                answer = input("Grassy field con.t")
-                if answer == "west":
                     answer = input("What's that in the distance?")
                     if answer == "west":
                         answer = input("Two horses stand tall in front of you! They seem completely identical. Would you like to pet one?")
                         if answer == "yes":
                             answer = input("Which one? (1 or 2)")
                             correctPath = random.randint(1, 2)
-
-
-                            def choosepath():
-                                path = ""
-                                while path != "1" and path != "2":
-                                    path = input("Which horse would you like to pet, 1 or 2?")
-                                return path
                             if choosepath == correctPath:
                                 print("")
                                 print("Good choice!")
@@ -70,10 +69,17 @@ if answer.lower().strip() == "yes" or "y":
                                 print("Uh oh...")
                                 time.sleep(1)
                                 print("As you reached your hand out to pat the horse you notice something peculiar.")
-                                time.sleep(1)
+                                time.sleep(2)
                                 print("It's flesh seems to be rotting")
-                                time.sleep(1)
+                                time.sleep(2)
                                 print("It's eyes roll back in his head as it reaches out and bites your hand viciously!")
+                                time.sleep(3)
+                                print("You Died!")
+                              #  playAgain = "Yes"
+                              #  while playAgain == 'Yes' or playAgain == "Y" or playAgain == "y" or playAgain == "yes":
+                              #      playAgain = input("Do you want to play again? Yes or Y to continue playing?")
+                              #      if playAgain == 'Yes' or playAgain == "Y"  or playAgain == "y" or playAgain == "yes":
+                              #       displayIntro()
 
                         if answer == "no":
                             answer = input("You turn around abruptly and start heading East.")
