@@ -16,6 +16,7 @@ class Inventory(object):
 
     def add_item(self, item):
         self.items[item.name] = item
+        self.items[axe] = axe
 
     def print_items(self):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
@@ -36,11 +37,11 @@ if answer.lower().strip() == "yes" or "y":
     time.sleep(.15)
     displayIntro()
     answer = input("Where would you like to go? (cardinal directions)").lower().strip()
+    #-----------------------------------------NORTH-------------------------------------
     if answer == "north":
         answer = input("You see a barn in the distance.")
         if answer == "north":
-            answer = input("You reach two tall barn doors.")
-            choice = input("> ");
+            choice = input("You reach two tall barn doors.");
             if answer == "open" or answer == "open doors":
                 print("The doors are locked.")
                 time.sleep(1)
@@ -48,23 +49,25 @@ if answer.lower().strip() == "yes" or "y":
                 time.sleep(1)
                 print("You find an axe lying on the ground.")
                 time.sleep(1)
-                print("What do you do?")
-                choice = input("> ");
+                choice = input("What do you do?");
                 if "axe" in choice:
                  print("You take the axe.")
                 axe = True
                 answer = input("Would you like to try the doors again?")
                 if answer == "yes":
                     print("You break down the doors easily with your new axe.")
+                    if "enter" or "go in" in choice:
+                        print("Welcome to the barn.")
                 if answer == "no":
                     print("Okay, your loss.")
-                
+    #---------------------------------------SOUTH-----------------------------------------
     if answer == "south":
         answer = input("You see a forest in the distance.")
         if answer == "south":
             answer = input("Forest")
             if answer == "south":
                 answer = input("Forest")
+    #--------------------------------------EAST-------------------------------------------
     if answer == "east":
         answer = input("You see a still pool of water in the distance")
         if answer == "east":
@@ -73,6 +76,7 @@ if answer.lower().strip() == "yes" or "y":
             print("As you look into it you see your reflection.")
             time.sleep(2)
             print("You are bloodied and bruised, with a mysterious green ooze covering you.")
+    #-------------------------------------WEST---------------------------------------------
     if answer == "west":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
         if answer == "west":
@@ -83,8 +87,13 @@ if answer.lower().strip() == "yes" or "y":
                             answer = input("Which one? (1 or 2)")
                             if answer == "1":
                                 print("")
+                                print("...")
+                                time.sleep(2)
                                 print("Good choice!")
-                                print("The horse warmed right up to you. You're filled with happiness.")
+                                time.sleep(1)
+                                print("The horse warmed right up to you.")
+                                time.sleep(1)
+                                print("You're filled with happiness.")
                             if answer == "2":
                                 print("Uh oh...")
                                 time.sleep(1)
