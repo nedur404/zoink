@@ -1,0 +1,124 @@
+#name: Adam Runnels
+#date started: 9-25-2019
+#description: text based adventure game inspired by Zork
+class Item(object):
+    def __init__(self, name, attack, armor, weight, price):
+        self.name = name
+        self.attack = attack
+        self.armor = armor
+        self.weight = weight
+        self.price = price
+
+
+class Inventory(object):
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item):
+        self.items[item.name] = item
+        self.items[axe] = axe
+
+    def print_items(self):
+        print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
+        for item in self.items.values():
+            print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+def printsleep1():
+    print(time.sleep (1))
+    print("")
+def choosepath():
+    path = ""
+    while path != "1" and path != "2":
+        path = input("Which horse would you like to pet, 1 or 2?")
+    return path
+import random
+import time
+answer = input("Would you like to play? (yes/no)")
+
+if answer.lower().strip() == "yes" or "y":
+    def displayIntro():
+        print("You wake up in a grassy field with no memory of how you got there.")
+    time.sleep(.15)
+    displayIntro()
+    answer = input("Where would you like to go? (cardinal directions)").lower().strip()
+    #-----------------------------------------NORTH-------------------------------------
+    if answer == "north":
+        answer = input("You see a barn in the distance.")
+        if answer == "north":
+            choice = input("You reach two tall barn doors.");
+            if answer == "open" or answer == "open doors":
+                print("The doors are locked.")
+                time.sleep(1)
+                print("But what's that?")
+                time.sleep(1)
+                print("You find an axe lying on the ground.")
+                time.sleep(1)
+                choice = input("What do you do?");
+                if "axe" in choice:
+                 print("You take the axe.")
+                axe = True
+                answer = input("Would you like to try the doors again?")
+                if answer == "yes":
+                    print("You break down the doors easily with your new axe.")
+                    if "enter" or "go in" in choice:
+                        print("Welcome to the barn.")
+                if answer == "no":
+                    print("Okay, your loss.")
+    #---------------------------------------SOUTH-----------------------------------------
+    if answer == "south":
+        answer = input("You see a forest in the distance.")
+        if answer == "south":
+            answer = input("Forest")
+            if answer == "south":
+                answer = input("Forest")
+    #--------------------------------------EAST-------------------------------------------
+    if answer == "east":
+        answer = input("You see a still pool of water in the distance")
+        if answer == "east":
+            print("You reach the pool of water")
+            time.sleep(1)
+            print("As you look into it you see your reflection.")
+            time.sleep(2)
+            print("You are bloodied and bruised, with a mysterious green ooze covering you.")
+    #-------------------------------------WEST---------------------------------------------
+    if answer == "west":
+        answer = input("Even more of the grassy field you awoke in surrounds you.")
+        if answer == "west":
+                    answer = input("What's that in the distance?")
+                    if answer == "west":
+                        answer = input("Two horses stand tall in front of you! They seem completely identical. Would you like to pet one?")
+                        if answer == "yes":
+                            answer = input("Which one? (1 or 2)")
+                            if answer == "1":
+                                print("")
+                                print("...")
+                                time.sleep(2)
+                                print("Good choice!")
+                                time.sleep(1)
+                                print("The horse warmed right up to you.")
+                                time.sleep(1)
+                                print("You're filled with happiness.")
+                            if answer == "2":
+                                print("Uh oh...")
+                                time.sleep(1)
+                                print("As you reached your hand out to pat the horse you notice something peculiar.")
+                                time.sleep(2)
+                                print("It's flesh seems to be rotting")
+                                time.sleep(2)
+                                print("It's eyes roll back in his head as it reaches out and bites your hand viciously!")
+                                time.sleep(3)
+                                answer = input("You Died!")
+                              #  playAgain = "Yes"
+                              #  while playAgain == 'Yes' or playAgain == "Y" or playAgain == "y" or playAgain == "yes":
+                              #      playAgain = input("Do you want to play again? Yes or Y to continue playing?")
+                              #      if playAgain == 'Yes' or playAgain == "Y"  or playAgain == "y" or playAgain == "yes":
+                              #       displayIntro()
+                        if answer == "no":
+                            answer = input("You turn around abruptly and start heading East.")
+if answer.lower().strip() == "no":
+    print("That's too bad.")
+    #sys.exit
+#else:
+    #print("You can't do that here.")
+
+
+
