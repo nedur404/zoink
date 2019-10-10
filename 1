@@ -22,6 +22,7 @@ class Inventory(object):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
         for item in self.items.values():
             print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+
 def printsleep1():
     print(time.sleep (1))
     print("")
@@ -30,22 +31,29 @@ def choosepath():
     while path != "1" and path != "2":
         path = input("Which horse would you like to pet, 1 or 2?")
     return path
+import sys
 import random
 import time
+def print_slow(words):
+    for char in words:
+        time.sleep(.01)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+#---------------------------------------------GAME PLAY BEGIN----------------------------------
 answer = input("Would you like to play? (yes/no)")
 if answer.lower().strip() == "yes" or "y":
  play = True
  while play:
     def displayIntro():
         print("You wake up in a grassy field with no memory of how you got there.")
-    time.sleep(.15)
+    time.sleep(1)
     displayIntro()
-    answer = input("Where would you like to go? (cardinal directions)").lower().strip()
+    answer = input(" Where would you like to go? (cardinal directions)").lower().strip()
     #-----------------------------------------NORTH-------------------------------------
     if answer == "north":
         answer = input("You see a barn in the distance.")
         if answer == "north":
-            choice = input("You reach two tall barn doors.");
+            answer = input("You reach two tall barn doors.");
             if answer == "open" or answer == "open doors":
                 print("The doors are locked.")
                 time.sleep(1)
@@ -60,8 +68,11 @@ if answer.lower().strip() == "yes" or "y":
                 answer = input("Would you like to try the doors again?")
                 if answer == "yes":
                     print("You break down the doors easily with your new axe.")
+                    time.sleep(1)
+                    choice = input("Would you like to go in?")
                     if "enter" or "go in" in choice:
                         print("Welcome to the barn.")
+                        break
                 if answer == "no":
                     print("Okay, your loss.")
     #---------------------------------------SOUTH-----------------------------------------
@@ -80,6 +91,16 @@ if answer.lower().strip() == "yes" or "y":
             print("As you look into it you see your reflection.")
             time.sleep(2)
             print("You are bloodied and bruised, with a mysterious green ooze covering you.")
+            time.sleep(1)
+            choice = input("What do you do?")
+            if "drink" in choice:
+                print("You drink the ground water. Gross.")
+                time.sleep(1)
+                print("Wait a minute...")
+                time.sleep(1)
+                print("As you continue to admire your reflection in the pool you see your wounds begin to heal!")
+                time.sleep(1)
+                break
     #-------------------------------------WEST---------------------------------------------
     if answer == "west":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
@@ -109,10 +130,15 @@ if answer.lower().strip() == "yes" or "y":
                                 time.sleep(2)
                                 print("It's eyes roll back in his head as it reaches out and bites your hand viciously!")
                                 time.sleep(2)
-                                print("You Died!")
+                                print("You", end= " ")
+                                time.sleep(1)
+                                print("DIED")
+                                time.sleep(2)
                                 print("Would you like to play again?")
                                 again = str(input("(yes or no)"))
                                 if again == "no":
+                                    print("Goodbye.")
+                                    time.sleep(1)
                                     play = False
                                     break
                                 if again == "yes":
@@ -124,8 +150,6 @@ if answer.lower().strip() == "no":
     #sys.exit
 #else:
     #print("You can't do that here.")
-
-
 
 
 
