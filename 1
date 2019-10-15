@@ -34,18 +34,22 @@ def choosepath():
 import sys
 import random
 import time
-def print_slow(words):
-    for char in words:
-        time.sleep(.01)
-        sys.stdout.write(char)
+import sys,time,random
+
+typing_speed = 250 #wpm
+def slow_type(t):
+    for l in t:
+        sys.stdout.write(l)
         sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+    print:''
 #---------------------------------------------GAME PLAY BEGIN----------------------------------
 answer = input("Would you like to play? (yes/no)")
 if answer.lower().strip() == "yes" or "y":
  play = True
  while play:
     def displayIntro():
-        print("You wake up in a grassy field with no memory of how you got there.")
+        slow_type("You wake up in a grassy field with no memory of how you got there.")
     time.sleep(1)
     displayIntro()
     answer = input(" Where would you like to go? (cardinal directions)").lower().strip()
