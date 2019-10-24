@@ -76,6 +76,51 @@ if answer.lower().strip() == "yes" or "y":
                     choice = input("Would you like to go in?")
                     if "enter" or "go in" in choice:
                         print("Welcome to the barn.")
+                        time.sleep(2)
+                        print("The inside of the barn does not match the outside.")
+                        time.sleep(1)
+                        print("While the exterior was run down and dirty, like most abandoned barns are,")
+                        time.sleep(2)
+                        print("the interior is spotless and modern. It looks more like the inside of a lab than a barn.")
+                        time.sleep(2)
+                        print("In front of you is a desk, with two files on top of it, as well as a lamp.")
+                        time.sleep(1)
+                        print("As you look around you hear the doors slam shut and bar.")
+                        choice = input("What do you do?")
+                        if "desk" in choice:
+                            print("On top of the desk are two files.")
+                        if "files" in choice:
+                            print("The first file reads the following:")
+                            print("A pattern of light will OPEN the doors.")
+                            choice = input("The second file has a morse code chart.")
+                            if "read morse code" in choice:
+                                print("A ."
+                                "B -..."
+                                "C -.-."
+                                "D -.."
+                                "E ."
+                                "F ..-."
+                                "G --."
+                                "H ...."
+                                "I .."
+                                "J .---"
+                                "K -.-"
+                                "L .-.."
+                                "M --"
+                                "N -."
+                                "O ---"
+                                "P .--."
+                                "Q --.-"
+                                "R .-."
+                                "S ..."
+                                "T -"
+                                "U ..-"
+                                "V ...-"
+                                "W .--"
+                                "X -..-"
+                                "Y -.--"
+                                "Z --..")
+
                         break
                 if answer == "no":
                     print("Okay, your loss.")
@@ -111,6 +156,7 @@ if answer.lower().strip() == "yes" or "y":
                 print("You begin to gasp, fully expecting your lungs to be filled with water.")
                 time.sleep(2)
                 print("That's when you realize you can breathe fine.")
+
                # ---------------------------------------------CONTINUE CODE HERE--------------------------------
             if "drink" in choice:
                 print("You drink the ground water. Gross.")
