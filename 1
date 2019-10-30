@@ -17,6 +17,7 @@ class Inventory(object):
     def add_item(self, item):
         self.items[item.name] = item
         self.items[axe] = axe
+        self.items[lamp] = lamp
 
     def print_items(self):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
@@ -78,48 +79,55 @@ if answer.lower().strip() == "yes" or "y":
                         print("Welcome to the barn.")
                         time.sleep(2)
                         print("The inside of the barn does not match the outside.")
-                        time.sleep(1)
+                        time.sleep(2)
                         print("While the exterior was run down and dirty, like most abandoned barns are,")
                         time.sleep(2)
                         print("the interior is spotless and modern. It looks more like the inside of a lab than a barn.")
                         time.sleep(2)
                         print("In front of you is a desk, with two files on top of it, as well as a lamp.")
-                        time.sleep(1)
+                        time.sleep(2)
                         print("As you look around you hear the doors slam shut and bar.")
                         choice = input("What do you do?")
                         if "desk" in choice:
                             print("On top of the desk are two files.")
                         if "files" in choice:
                             print("The first file reads the following:")
-                            print("A pattern of light will OPEN the doors.")
+                            time.sleep(2)
+                            print("'A pattern of light will OPEN the doors.'")
+                            time.sleep(2)
                             choice = input("The second file has a morse code chart.")
-                            if "read morse code" in choice:
-                                print("A ."
-                                "B -..."
-                                "C -.-."
-                                "D -.."
-                                "E ."
-                                "F ..-."
-                                "G --."
-                                "H ...."
-                                "I .."
-                                "J .---"
-                                "K -.-"
-                                "L .-.."
-                                "M --"
-                                "N -."
-                                "O ---"
-                                "P .--."
-                                "Q --.-"
-                                "R .-."
-                                "S ..."
-                                "T -"
-                                "U ..-"
-                                "V ...-"
-                                "W .--"
-                                "X -..-"
-                                "Y -.--"
-                                "Z --..")
+                            if "morse code" in choice:
+                                print("A .  "
+                                "B -... "
+                                "C -.-. "
+                                "D -..  "
+                                "E .    "
+                                "F ..-. "
+                                "G --.  "
+                                "H .... "
+                                "I ..   "
+                                "J .--- "
+                                "K -.-  "
+                                "L .-.. "
+                                "M --   "
+                                "N -.   "
+                                "O ---  "
+                                "P .--. "
+                                "Q --.- "
+                                "R .-.  "
+                                "S ...  "
+                                "T -    "
+                                "U ..-  "
+                                "V ...- "
+                                "W .--  "
+                                "X -..- "
+                                "Y -.-- "
+                                "Z --.. ")
+                            if "turn on lamp" in choice:
+                             elif_lamp = False:
+                             print ("The lamp is now on.")
+                            lamp = True
+
 
                         break
                 if answer == "no":
