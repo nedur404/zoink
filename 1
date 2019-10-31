@@ -17,12 +17,16 @@ class Inventory(object):
     def add_item(self, item):
         self.items[item.name] = item
         self.items[axe] = axe
-        self.items[lamp] = lamp
+        self.items[morse_code_entered] = morse_code_entered
 
     def print_items(self):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
         for item in self.items.values():
             print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+def barn():
+    print("")
+def lamp_on():
+    print("The lamp is now on.")
 
 def printsleep1():
     print(time.sleep (1))
@@ -50,7 +54,7 @@ if answer.lower().strip() == "yes" or "y":
  play = True
  while play:
     def displayIntro():
-        slow_type("You wake up in a grassy field with no memory of how you got there.")
+        print("You wake up in a grassy field with no memory of how you got there.")
     time.sleep(1)
     displayIntro()
     answer = input(" Where would you like to go? (cardinal directions)").lower().strip()
@@ -76,6 +80,7 @@ if answer.lower().strip() == "yes" or "y":
                     time.sleep(1)
                     choice = input("Would you like to go in?")
                     if "enter" or "go in" in choice:
+
                         print("Welcome to the barn.")
                         time.sleep(2)
                         print("The inside of the barn does not match the outside.")
@@ -87,46 +92,57 @@ if answer.lower().strip() == "yes" or "y":
                         print("In front of you is a desk, with two files on top of it, as well as a lamp.")
                         time.sleep(2)
                         print("As you look around you hear the doors slam shut and bar.")
-                        choice = input("What do you do?")
-                        if "desk" in choice:
-                            print("On top of the desk are two files.")
-                        if "files" in choice:
-                            print("The first file reads the following:")
-                            time.sleep(2)
-                            print("'A pattern of light will OPEN the doors.'")
-                            time.sleep(2)
-                            choice = input("The second file has a morse code chart.")
-                            if "morse code" in choice:
-                                print("A .  "
-                                "B -... "
-                                "C -.-. "
-                                "D -..  "
-                                "E .    "
-                                "F ..-. "
-                                "G --.  "
-                                "H .... "
-                                "I ..   "
-                                "J .--- "
-                                "K -.-  "
-                                "L .-.. "
-                                "M --   "
-                                "N -.   "
-                                "O ---  "
-                                "P .--. "
-                                "Q --.- "
-                                "R .-.  "
-                                "S ...  "
-                                "T -    "
-                                "U ..-  "
-                                "V ...- "
-                                "W .--  "
-                                "X -..- "
-                                "Y -.-- "
-                                "Z --.. ")
-                            if "turn on lamp" in choice:
-                             elif_lamp = False:
-                             print ("The lamp is now on.")
-                            lamp = True
+                        True == barn
+                        morse_code_entered = False
+                        while not morse_code_entered:
+                            choice = input("What do you do?")
+                            if "desk" in choice:
+                                print("On top of the desk are two files.")
+                            if "files" in choice:
+                                print("The first file reads the following:")
+                                time.sleep(2)
+                                print("'A pattern of light will OPEN the doors.'")
+                                time.sleep(2)
+                                choice = input("The second file has a morse code chart.")
+                                if "morse code" in choice:
+                                    print("A .  "
+                                    "B -... "
+                                    "C -.-. "
+                                    "D -..  "
+                                    "E .    "
+                                    "F ..-. "
+                                    "G --.  "
+                                    "H .... "
+                                    "I ..   "
+                                    "J .--- "
+                                    "K -.-  "
+                                    "L .-.. "
+                                    "M --   "
+                                    "N -.   "
+                                    "O ---  "
+                                    "P .--. "
+                                    "Q --.- "
+                                    "R .-.  "
+                                    "S ...  "
+                                    "T -    "
+                                    "U ..-  "
+                                    "V ...- "
+                                    "W .--  "
+                                    "X -..- "
+                                    "Y -.-- "
+                                    "Z --.. ")
+                                if "turn on lamp" in choice:
+                                 lamp_on = True
+                                if lamp_on:
+                                    print("The lamp is now on.")
+                                    if "--- .--. . -." in choice:
+                                        morse_code_entered = True
+                            if morse_code_entered:
+                                barn = False
+                                print("You hear clicking mechanisms within the door, and the barn doors creak open")
+                            if not barn:
+                                print("You've escaped the barn!")
+
 
 
                         break
