@@ -64,7 +64,7 @@ if answer.lower().strip() == "yes" or "y":
         if answer == "north":
             answer = input("You reach two tall barn doors.");
             if answer == "open" or answer == "open doors":
-                print("The doors are locked.")
+                print("The doors are padlocked shut.")
                 time.sleep(1)
                 print("But what's that?")
                 time.sleep(1)
@@ -72,11 +72,11 @@ if answer.lower().strip() == "yes" or "y":
                 time.sleep(1)
                 choice = input("What do you do?");
                 if "axe" in choice:
-                 print("You take the axe.")
+                    print("You take the axe.")
                 axe = True
                 answer = input("Would you like to try the doors again?")
                 if answer == "yes":
-                    print("You break down the doors easily with your new axe.")
+                    print("You break off the padlock with your axe.")
                     time.sleep(1)
                     choice = input("Would you like to go in?")
                     if "enter" or "go in" in choice:
@@ -92,7 +92,7 @@ if answer.lower().strip() == "yes" or "y":
                         print("In front of you is a desk, with two files on top of it, as well as a lamp.")
                         time.sleep(2)
                         print("As you look around you hear the doors slam shut and bar.")
-                        True == barn
+                        barn = True
                         morse_code_entered = False
                         while not morse_code_entered:
                             choice = input("What do you do?")
@@ -132,14 +132,14 @@ if answer.lower().strip() == "yes" or "y":
                                     "Y -.-- "
                                     "Z --.. ")
                                 if "turn on lamp" in choice:
-                                 lamp_on = True
+                                    lamp_on = True
                                 if lamp_on:
                                     print("The lamp is now on.")
-                                    if "--- .--. . -." in choice:
-                                        morse_code_entered == True
-                                        if morse_code_entered == True:
-                                            False == barn
-                                            print("You hear clicking mechanisms within the door, and the barn doors creak open")
+                                if "--- .--. . -." in choice:
+                                    morse_code_entered == True
+                                    if morse_code_entered == True:
+                                        False == barn
+                                        print("You hear clicking mechanisms within the door, and the barn doors creak open")
                             if not barn:
                                 print("You've escaped the barn!")
 
@@ -239,6 +239,3 @@ if answer.lower().strip() == "no":
     #sys.exit
 #else:
     #print("You can't do that here.")
-
-
-
