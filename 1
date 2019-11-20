@@ -48,6 +48,8 @@ def slow_type(t):
         sys.stdout.flush()
         time.sleep(random.random()*10.0/typing_speed)
     print:''
+
+morse_code_entered = False
 #---------------------------------------------GAME PLAY BEGIN----------------------------------
 answer = input("Would you like to play? (yes/no)")
 if answer.lower().strip() == "yes" or "y":
@@ -82,15 +84,15 @@ if answer.lower().strip() == "yes" or "y":
                     if "enter" or "go in" in choice:
 
                         print("Welcome to the barn.")
-                        time.sleep(2)
+                        time.sleep(1)
                         print("The inside of the barn does not match the outside.")
-                        time.sleep(2)
+                        time.sleep(1)
                         print("While the exterior was run down and dirty, like most abandoned barns are,")
-                        time.sleep(2)
+                        time.sleep(1)
                         print("the interior is spotless and modern. It looks more like the inside of a lab than a barn.")
-                        time.sleep(2)
+                        time.sleep(1)
                         print("In front of you is a desk, with two files on top of it, as well as a lamp.")
-                        time.sleep(2)
+                        time.sleep(1)
                         print("As you look around you hear the doors slam shut and bar.")
                         barn = True
                         morse_code_entered = False
@@ -132,13 +134,13 @@ if answer.lower().strip() == "yes" or "y":
                                     "Y -.-- "
                                     "Z --.. ")
                                 if "turn on lamp" in choice:
-                                    lamp_on = True
+                                    lamp_on() == True
                                 if lamp_on:
                                     print("The lamp is now on.")
                                 if "--- .--. . -." in choice:
                                     morse_code_entered = True
-                                    if morse_code_entered == True:
-                                        False == barn
+                                    if morse_code_entered:
+                                        barn = False
                                         print("You hear clicking mechanisms within the door, and the barn doors creak open")
                             if not barn:
                                 print("You've escaped the barn!")
@@ -162,7 +164,7 @@ if answer.lower().strip() == "yes" or "y":
             print("You reach the pool of water")
             time.sleep(1)
             print("As you look into it you see your reflection.")
-            time.sleep(2)
+            time.sleep(1)
             print("You are bloodied and bruised, with a mysterious green ooze covering you.")
             time.sleep(1)
             choice = input("What do you do?")
@@ -170,7 +172,7 @@ if answer.lower().strip() == "yes" or "y":
                 print("You jump in the water fully clothed and begin to swim around happily.")
                 time.sleep(1)
                 print("After a few minutes of joyful splashing in the stagnant water you feel something brush your leg.")
-                time.sleep(2)
+                time.sleep(1.5)
                 print("A tentacle that's about as large as an adult man gently grasps your leg and pulls you downward.")
                 time.sleep(2)
                 print("Though you try to fight it off and swim back to land it continues to pull you")
