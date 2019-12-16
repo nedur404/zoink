@@ -23,6 +23,14 @@ class Inventory(object):
         print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
         for item in self.items.values():
             print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+
+thisdict = {
+    "Item":"Axe",
+    "Abilities":"Cut wood & Break things",
+    "Clues":"No"
+}
+print(thisdict)
+
 def barn():
     print("")
 def lamp_on():
