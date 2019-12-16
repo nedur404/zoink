@@ -25,9 +25,12 @@ class Inventory(object):
             print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
 
 thisdict = {
-    "Item":"Axe",
-    "Abilities":"Cut wood & Break things",
-    "Clues":"No"
+    "I":"Checks Inventory",
+    "Clues":"Checks for clues",
+    "N":"Travel North",
+    "S":"Travel South",
+    "E":"Travel East",
+    "W":"Travel West"
 }
 print(thisdict)
 
@@ -69,9 +72,9 @@ if answer.lower().strip() == "yes" or "y":
     displayIntro()
     answer = input(" Where would you like to go? (cardinal directions)").lower().strip()
     #-----------------------------------------NORTH-------------------------------------
-    if answer == "north":
+    if answer == "n":
         answer = input("You see a barn in the distance.")
-        if answer == "north":
+        if answer == "n":
             answer = input("You reach two tall barn doors.");
             if answer == "open" or answer == "open doors":
                 print("The doors are padlocked shut.")
@@ -159,16 +162,16 @@ if answer.lower().strip() == "yes" or "y":
                 if answer == "no":
                     print("Okay, your loss.")
     #---------------------------------------SOUTH-----------------------------------------
-    if answer == "south":
+    if answer == "s":
         answer = input("You see a forest in the distance.")
-        if answer == "south":
+        if answer == "s":
             answer = input("Forest")
-            if answer == "south":
+            if answer == "s":
                 answer = input("Forest")
     #--------------------------------------EAST-------------------------------------------
-    if answer == "east":
+    if answer == "e":
         answer = input("You see a still pool of water in the distance")
-        if answer == "east":
+        if answer == "e":
             print("You reach the pool of water")
             time.sleep(1)
             print("As you look into it you see your reflection.")
@@ -201,11 +204,11 @@ if answer.lower().strip() == "yes" or "y":
                 time.sleep(1)
                 break
     #-------------------------------------WEST---------------------------------------------
-    if answer == "west":
+    if answer == "w":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
-        if answer == "west":
+        if answer == "w":
                     answer = input("What's that in the distance?")
-                    if answer == "west":
+                    if answer == "w":
                         answer = input("Two horses stand tall in front of you! They seem completely identical. Would you like to pet one?")
                         if answer == "yes":
                             answer = input("Which one? (1 or 2)")
