@@ -38,11 +38,22 @@ print(thisdict)
     #print("")
 def barn():
     print("")
-def lamp_on():
-    print("The lamp is now on.")
 
-def printsleep1():
-    print(time.sleep (1))
+def lamp_state():
+
+def lamp_on():
+
+if not lamp_state:
+    print("the lamp is off")
+def lamp_off(lamp_state):
+    if lamp_state == True:
+        lamp_state = False
+def lamp_query():
+
+
+
+    def printsleep1():
+        print(time.sleep (1))
     print("")
 def choosepath():
     path = ""
@@ -147,8 +158,9 @@ if answer.lower().strip() == "yes" or "y":
                                     "Y -.-- "
                                     "Z --.. ")
                                 if "turn on lamp" in choice:
+                                    lamp_state() == True
                                     lamp_on() == True
-                                if lamp_on:
+                                if lamp_state():
                                     print("The lamp is now on.")
                                 if "--- .--. . -." in choice:
                                     morse_code_entered = True
