@@ -85,9 +85,9 @@ if answer.lower().strip() == "yes" or "y":
     displayIntro()
     answer = input(" Where would you like to go? (cardinal directions)").lower().strip()
     #-----------------------------------------NORTH-------------------------------------
-    if answer == "n":
+    if answer == "n" or "north":
         answer = input("You see a barn in the distance.")
-        if answer == "n":
+        if answer == "n" or "north":
             answer = input("You reach two tall barn doors.");
             if answer == "open" or answer == "open doors":
                 print("The doors are padlocked shut.")
@@ -176,16 +176,16 @@ if answer.lower().strip() == "yes" or "y":
                 if answer == "no":
                     print("Okay, your loss.")
     #---------------------------------------SOUTH-----------------------------------------
-    if answer == "s":
+    if answer == "s" or "south":
         answer = input("You see a forest in the distance.")
-        if answer == "s":
+        if answer == "s" or "south":
             answer = input("Forest")
-            if answer == "s":
+            if answer == "s" or "south":
                 answer = input("Forest")
     #--------------------------------------EAST-------------------------------------------
-    if answer == "e":
+    if answer == "e" or "east":
         answer = input("You see a still pool of water in the distance")
-        if answer == "e":
+        if answer == "e" or "east":
             print("You reach the pool of water")
             time.sleep(1)
             print("As you look into it you see your reflection.")
@@ -218,11 +218,11 @@ if answer.lower().strip() == "yes" or "y":
                 time.sleep(1)
                 break
     #-------------------------------------WEST---------------------------------------------
-    if answer == "w":
+    if answer == "w" or "west":
         answer = input("Even more of the grassy field you awoke in surrounds you.")
-        if answer == "w":
+        if answer == "w" or "west":
                     answer = input("What's that in the distance?")
-                    if answer == "w":
+                    if answer == "w" or "west":
                         answer = input("Two horses stand tall in front of you! They seem completely identical. Would you like to pet one?")
                         if answer == "yes":
                             answer = input("Which one? (1 or 2)")
