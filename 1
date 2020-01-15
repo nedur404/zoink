@@ -39,22 +39,28 @@ print(thisdict)
 def barn():
     print("")
 
-lamp_state = False
+lamp_state: bool = False
 
-def lamp_on():
-
-    if not lamp_state:
-     print("the lamp is off")
-def lamp_off(lamp_state):
-    if lamp_state:
-        lamp_state = False
 def lamp_query():
+    return lamp_state
 
+def lamp_switch(state):
+    global lamp_state
+    if state.lower() == "on":
+        lamp_state = True
+        print("lamp is now on")
+    elif state.lower() == "off":
+        lamp_state = False
+        print("lamp is now off")
+    return lamp_state
 
+   # if __name__ == "__main__":
+    #    main()
 
-    def printsleep1():
-        print(time.sleep (1))
+def printsleep1():
+    print(time.sleep (1))
     print("")
+
 def choosepath():
     path = ""
     while path != "1" and path != "2":
@@ -122,6 +128,8 @@ if answer.lower().strip() == "yes" or "y":
                         morse_code_entered = False
                         while not morse_code_entered:
                             choice = input("What do you do?")
+                            print("you entered: " )
+                            print(choice)
                             if "desk" in choice:
                                 print("On top of the desk are two files.")
                             if "files" in choice:
@@ -129,9 +137,9 @@ if answer.lower().strip() == "yes" or "y":
                                 time.sleep(2)
                                 print("'A pattern of light will OPEN the doors.'")
                                 time.sleep(2)
-                                choice = input("The second file has a morse code chart.")
-                                if "morse code" in choice:
-                                    print("A .  "
+                                choice1 = input("The second file has a morse code chart.")
+                                if "morse code" in choice1:
+                                    print("A .-  "
                                     "B -... "
                                     "C -.-. "
                                     "D -..  "
@@ -157,16 +165,16 @@ if answer.lower().strip() == "yes" or "y":
                                     "X -..- "
                                     "Y -.-- "
                                     "Z --.. ")
-                                if "turn on lamp" in choice:
-                                    lamp_state() == True
-                                    lamp_on() == True
-                                if lamp_state():
-                                    print("The lamp is now on.")
-                                if "--- .--. . -." in choice:
-                                    morse_code_entered = True
-                                    if morse_code_entered:
-                                        barn = False
-                                        print("You hear clicking mechanisms within the door, and the barn doors creak open")
+                            if "on" in choice:
+                                #lamp_switch =  True
+                                lamp_switch("on")
+                            if lamp_query() == True:
+                                print("The lamp is now on.")
+                            if "--- .--. . -." in choice:
+                                morse_code_entered = True
+                                if morse_code_entered:
+                                    barn = False
+                                    print("You hear clicking mechanisms within the door, and the barn doors creak open")
                             if not barn:
                                 print("You've escaped the barn!")
 
